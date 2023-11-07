@@ -9,8 +9,12 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
 }
-.header_logo {
+.header__logo {
     height: 30px;
 }
 a {
@@ -32,13 +36,19 @@ button{
     cursor: pointer; /*указатель при наведении на кнопку*/
     box-shadow: 0 16px 36px rgb(52 213 68 / 22%); /*рисует тень*/
     padding: 15px; /*стиль */
+
 }
-.about_image{
+.about__image{
     width: 500px;
 }
-.about_sun-image{
+.about__sun-image{
     width: 100px;
     height: 100px;
+    animation: rotation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: absolute;
 }
 .about{
     display:flex;
@@ -46,6 +56,9 @@ button{
     justify-content: space-around; 
     padding-bottom: 115px;
     padding-top: 115px;
+    background: url('img/back.png') no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .about h1{
     font-size: 70px; /*размер шрифта*/
@@ -62,11 +75,114 @@ button{
     padding: 20px 25px;
     margin-top: 20px;
 }
-.about_info{
+.about__info{
     max-width: 550px;
 }
-.about{
-    background: url('img/back.png') no-repeat;
-    background-position: center;
-    background-size: cover;
+.form__container {
+    width: 550px;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    background-color: #1d263A;
+    color: #fff;
+    padding-top: 115px;
+    padding-bottom: 115px;
+    text-align: center;
+}
+.form h1 {
+    font-size: 48px;
+}
+.form p {
+    font-size: 18px;
+    opacity: 0.65;
+}
+.form__group{
+    display:flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 60px;
+    display: grid;
+    grid-gap: 20px;
+    
+}
+/* .form form записан код в группу не работает нужно найти решение*/
+.form form {
+    margin-top: 60px;
+    display: grid;
+    grid-gap: 20px;
+}
+.form label {
+    font-size: 18px;
+    font-weight: 15px;
+    margin-bottom: 15px;
+}
+.form input {
+    font-size: 18px;
+    color: #213053;
+    height: 60px;
+    padding: 0 20 0 20;
+    border-radius: 15px;
+    border: none;
+}
+.form select {
+    font-size: 18px;
+    color: #213053;
+    height: 60px;
+    padding: 0 20 0 20;
+    border-radius: 15px;
+    border: none;
+}
+.form__submit {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 40px;
+}
+select {
+    appearance: none;
+}
+input {
+    outline: none;
+}
+button:hover {
+    background-color: #f6980c;
+    box-shadow:0 16px 36px rgba(246 152 12/20%);
+    transition: background-color 0.3s;
+    transition: margin-right 1s ease-in;
+}
+@keyframes rotation {
+    0% {
+        transform: rotate(360deg);
+    }
+}
+footer {
+    padding: 90px 20px 90px 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.footer__container {
+   display: flex;
+   justify-content: center;
+   
+}
+.footer__copyright {
+    margin-top: 40px;
+    text-align: center;
+    opacity: 0.5;
+}
+.footer__group {
+    margin-right: 80px;
+
+}
+.footer__links h3 {
+    font-size: 16px;
+    opacity: 0.7;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+
+}
+.footer__links a {
+    margin-bottom: 15px;
 }
